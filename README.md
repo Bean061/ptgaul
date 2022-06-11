@@ -74,7 +74,10 @@ Options:
 (base)
 ```
 
-## repeat runs
+## loop runs
+
+The following shell snippet will filter different values of long reads, every one thousand values of n from 3000 to 15000. If the N50 is very long, you can also set n greater than 20000, in order to recover the inverted repeat region of chloroplast.
+
 ```
 for n in `seq 3000 1000 15000`; do
 	bash cpGAUL_1.0.3.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f $n
