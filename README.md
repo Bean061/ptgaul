@@ -74,7 +74,12 @@ Options:
 (base)
 ```
 
-
+## repeat runs
+```
+for n in `seq 3000 1000 15000`; do
+	bash cpGAUL_1.0.3.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f $n
+done
+```
 ## Citation
 
 coming soon.
