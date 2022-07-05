@@ -107,10 +107,10 @@ files illumina_* are the fq.gz file of illumina reads. Change the output path di
 ```
 gunzip -c $illumina_1r1 $illumina_1r2 $illumina_2r1 $illumina_2r2 | awk 'NR % 4 == 2' | sort | tr NT TN | ropebwt2 -LR | tr NT TN | msbwt convert /PATH/msbwt
 ```
-Once you finished msbwt run. -p means thread number. $assembled_cp is assembled chloroplast genome from cpGAUL. Change the output path of "/PATH/fmlrc/corrected.fasta"
+Once you finished msbwt run. $N means thread number. $assembled_cp is assembled chloroplast genome from cpGAUL. Change the output path of "/PATH/fmlrc/corrected.fasta"
 
 ```
-fmlrc -p $n /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fasta
+fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fasta
 ```
 
 ## Citation
