@@ -4,27 +4,27 @@ This pipeline is used for plastid genome assembly based on long reads data, incl
 
 ## Prerequisites and Software/dependencies
 
-1. [minimap2](https://github.com/lh3/minimap2) or use [conda](https://anaconda.org/bioconda/minimap2)to install.
+1. [minimap2](https://github.com/lh3/minimap2) or use [conda](https://anaconda.org/bioconda/minimap2) to install.
 ```
 check if minimap2 is installed successfully by typing "minimap2 -h" in terminal.
 ```
 
-2. [seqkit](https://bioinf.shenwei.me/seqkit/) or use [conda](https://anaconda.org/bioconda/seqkit)to install.for Step2.
+2. [seqkit](https://bioinf.shenwei.me/seqkit/) or use [conda](https://anaconda.org/bioconda/seqkit) to install.for Step2.
 
 ```
 check if seqkit is installed successfully by typing "seqkit -h" in terminal.
 ```
-3. [assembly-stats](https://github.com/sanger-pathogens/assembly-stats) or use [conda](https://anaconda.org/bioconda/assembly-stats)to install.for Step2.
+3. [assembly-stats](https://github.com/sanger-pathogens/assembly-stats) or use [conda](https://anaconda.org/bioconda/assembly-stats) to install.for Step2.
 
 ```
 check if assembly-stats is installed successfully by typing "assembly-stats" in terminal.
 ```
-4. [seqtk](https://github.com/lh3/seqtk) or use [conda](https://anaconda.org/bioconda/seqtk)to install. for Step2.
+4. [seqtk](https://github.com/lh3/seqtk) or use [conda](https://anaconda.org/bioconda/seqtk) to install. for Step2.
  
 ```
 check if seqtk is installed successfully by typing "seqtk" in terminal.
 ```
-5. [flye](https://github.com/fenderglass/Flye) or use [conda](https://anaconda.org/bioconda/flye)to install. for Step2.
+5. [flye](https://github.com/fenderglass/Flye) or use [conda](https://anaconda.org/bioconda/flye) to install. for Step2.
 
 ```
 check if flye is installed successfully by typing "flye -h" in terminal.
@@ -36,15 +36,15 @@ check if python3 is installed successfully by typing "python3 -h" in terminal.
 ```
 
 #### Optional Software for polishing step
-7. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2)to install.
+7. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
 ```
 check if ropebwt2 is installed successfully by typing "ropebwt2 -h" in terminal.
 ```
-8. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt)to install.
+8. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt) to install.
 ```
 check if msbwt is installed successfully by typing "msbwt -h" in terminal.
 ```
-9. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc)to install.
+9. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc) to install.
 Use the fmlrc instead of fmlrc2.
 ```
 check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
@@ -53,7 +53,7 @@ check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ## Environment
 Examples can be run on Mac and Linux.
 
-![](cpGAUL_image.pdf)
+![](cpGAUL_image.png)
 
 ## Quick run
 The basic things that you need to run cpGAUL are 1) a cpgenome from a closely related cpgenome data and 2) longread data (works for all fasta, fastq, and fq.gz files).
