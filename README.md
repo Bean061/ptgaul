@@ -91,14 +91,14 @@ Options:
 (base)
 ```
 
-## If the edge number does not equal 3
+## (Optional) If the edge number does not equal 3
 You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). Then, manually run the python script again to get the assembly results including two paths.
 ```
 python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
 ```
 
 
-## final assembly polish using short reads data
+## (Optional) Final assembly polish using short reads data
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
 
 ```
