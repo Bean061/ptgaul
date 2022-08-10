@@ -69,13 +69,13 @@ The basic things that you need to run cpGAUL are 1) a cpgenome from a closely re
 #### EXAMPLE
 ##### The command for the example data.
   ```bash
-  bash cpGAUL_1.0.3.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f 3000 
+  bash cpGAUL_1.0.4.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f 3000 
   ```
 ##### This script is used to find putative paralogs in 353 enrichment data. It requires two input parameters. The "-r", "-l" are required arguments.
   
   To check all parameters in cpGAUL using:
   ```bash
-  bash cpGUAL.sh -h
+  bash cpGAUL_1.0.4.sh -h
   ```
   
 ##### Parameters in Detail
@@ -91,15 +91,12 @@ Options:
 (base)
 ```
 
-## loop runs
-
-The following shell snippet will filter different values of long reads, every one thousand values of n from 3000 to 15000. If the N50 is very long, you can also set n greater than 20000, in order to recover the inverted repeat region of chloroplast.
-
+## If the edge number does not equal 3
+You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). Then, manually run the python script again to get the assembly results including two paths.
 ```
-for n in `seq 3000 1000 15000`; do
-	bash cpGAUL_1.0.3.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f $n
-done
+python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
 ```
+
 
 ## final assembly polish using short reads data
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
