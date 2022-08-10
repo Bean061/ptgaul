@@ -50,6 +50,8 @@ Use the fmlrc instead of fmlrc2.
 check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
 
+10. put combine_gfa.py and cpGAUL_1.0.4.sh in the same directory.
+
 ## Environment
 Examples can be run on Mac and Linux.
 
