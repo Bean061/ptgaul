@@ -112,6 +112,6 @@ fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fa
 
 ## Citation
 
-coming soon.
+(coming soon) Zhou et al., Chloroplast Genome Assemble Using Long-read data (cpGAUL).
 
 If you are using fmlrc, please cite Wang, Jeremy R. and Holt, James and McMillan, Leonard and Jones, Corbin D. FMLRC: Hybrid long read error correction using an FM-index. BMC Bioinformatics, 2018. 19 (1) 50.
