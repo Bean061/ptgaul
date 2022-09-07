@@ -276,7 +276,7 @@ if [[ $number_edge -eq 3 ]]; then
 	echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 	echo "The gfa file has three edges. It is ready for the combine_gfa.py script. \
 	See the output of Path1.fasta and Path2.fasta."
-	python ./combine_gfa.py -e ./result_$FRL/edges.fa -d ./result_$FRL/sorted_depth 2>>error.txt
+	python3 ./combine_gfa.py -e ./result_$FRL/edges.fa -d ./result_$FRL/sorted_depth 2>>error.txt
 	end=$(date +%s)
 	echo "It takes $(($end - $start)) sec in total."
 else
@@ -291,7 +291,7 @@ else
 	and sorted_depth files."
 	echo "Then, manually run the python script again to get the assembly results. \
 	See as follows."
-	echo "python ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d \
+	echo "python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d \
 	./PATH_OF_SORTED_DEPTH_FILE/sorted_depth"
 fi
 
