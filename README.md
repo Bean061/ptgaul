@@ -99,8 +99,13 @@ You should manually check the assembled data using [BANDAGE](https://rrwick.gith
 python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
 ```
 
+## (Optional) Final assembly polish using long reads data
+install racon using conda.
+```minimap2 -x ava-ont -t $n $asm $nanopore > ${racon_outdir}/map.paf
+```racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.racon.fasta
 
 ## (Optional) Final assembly polish using short reads data
+Highly recoomend to use fmlrc for polishing step.
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
 
 ```
