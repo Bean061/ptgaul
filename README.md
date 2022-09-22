@@ -1,4 +1,16 @@
-# chloroplast Genome Assembly Using Long reads data (cpgaul)
+# PlasTid Genome Assembly Using Long reads data (ptGAUL)
+===========================================================================
+                       _____           _        _         _    _
+    ___      _       /  ___  \       / _ \     | |       | |  | |
+   / _ \    | |     / /     \ \     / / \ \    | |       | |  | |
+  / / \ \ __| |__  | |       \_|    / / \ \    | |       | |  | |
+  ||   |||__   __| | |             / / _ \ \   | |       | |  | |
+  | \_/ /   | |    | |      ___    /  ___  \   | |       | |  | |
+  |  __/    | |_   | |     |__ |  / /     \ \  \ \       / /  | |        _
+  | |       |   |   \ \ ___ / /   / /     \ \   \ \ ___ / /   | | _____ | |
+  |_|       |__/     \ _____ /   /_/       \_\   \ _____ /    | _________ |
+
+===========================================================================
 
 This pipeline is used for plastid genome assembly based on long reads data, including both Nanopore and PacBio. It will help assemble the cpgenome with many repeat regions and reduce the assembly path number from short reads data. Our data is not published yet [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/).
 
