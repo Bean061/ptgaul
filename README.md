@@ -13,7 +13,7 @@
 
 ===========================================================================
 ```
-This pipeline is used for plastid genome assembly based on long reads data, including both Nanopore and PacBio. It will help assemble the cpgenome with many repeat regions and reduce the assembly path number from short reads data. Our data is not published yet [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/).
+This pipeline is used for plastid (chloroplast) genome assembly based on long reads data, including both Nanopore and PacBio. It will help assemble the complex plastomes with many long repeat regions and reduce the assembly path number from short reads data. Our data is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC.
 
 ## Prerequisites and Software/dependencies
 
@@ -71,29 +71,26 @@ Examples can be run on Mac and Linux.
 ![](ptGAUL_image.png)
 
 ## Quick run
-The basic things that you need to run ptGAUL are 1) a cpgenome from a closely related cpgenome data and 2) longread data (works for all fasta, fastq, and fq.gz files).
+The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related species and 2) -l: your long read data (any seuquence file in fasta, fastq, and fq.gz format).
 
+### keep in mind, run the command in the ptGAUL_version directory. Otherwise, combine_gfa.py will not be able to run automatically.
   
   ```
-  Example: bash ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
+  bash ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
   ```
-  
-## Output
-
 
 #### EXAMPLE
 ##### The command for the example data.
   ```bash
-  bash ptGAUL.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f 3000 
+  bash ptGAUL.sh -r /path/Beta.fasta -l /path/SRR1980665.1 -t 8 -f 3000 
   ```
-##### This script is used to find putative paralogs in 353 enrichment data. It requires two input parameters. The "-r", "-l" are required arguments.
-  
+
   To check all parameters in ptGAUL using:
   ```bash
   bash ptGAUL.sh -h
   ```
   
-##### Parameters in Detail
+##### Parameters in details
 ```bash
 Usage: this script is used for plastome assembly using long read data.
 ptGAUL.sh [options]
@@ -106,19 +103,22 @@ Options:
 (base)
 ```
 
-## (Optional) If the edge number does not equal 3
-You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). Then, manually run the python script again to get the assembly results including two paths.
+## Check your results before using it
+If the edge number does not equal 1 or 3 with abnormal plastid length, You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). When you confirm the edges are three, you can manually run the python script again to get the assembly results including two paths.
+
 ```
 python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
 ```
 
 ## (Optional) Final assembly polish using long reads data
-install racon using conda.
+### This step will improve your assembly a little, but not too much. Using short reads are highly recommended (see as follows).
+install racon using [conda] (https://anaconda.org/bioconda/racon).
 ```minimap2 -x ava-ont -t $n $asm $nanopore > ${racon_outdir}/map.paf
 ```racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.racon.fasta
 
 ## (Optional) Final assembly polish using short reads data
-Highly recommend to use fmlrc for polishing step.
+### Highly recommended step: use fmlrc for polishing step. [It outperforms other polishers](https://www.biorxiv.org/content/10.1101/2022.07.22.501182v1?ct=).
+
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
 
 ```
@@ -132,6 +132,6 @@ fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fa
 
 ## Citation
 
-(coming soon) Zhou et al., Plastid Genome Assembly Using Long-read data (ptGAUL).
+(in prep.) Zhou et al., Plastid Genome Assembly Using Long-read data (ptGAUL).
 
 If you are using fmlrc, please cite Wang, Jeremy R. and Holt, James and McMillan, Leonard and Jones, Corbin D. FMLRC: Hybrid long read error correction using an FM-index. BMC Bioinformatics, 2018. 19 (1) 50.
