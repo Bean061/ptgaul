@@ -111,10 +111,14 @@ python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DE
 ```
 
 ## (Optional) Final assembly polish using long reads data
-### This step will improve your assembly a little, but not too much. Using short reads are highly recommended (see as follows).
-install racon using [conda] (https://anaconda.org/bioconda/racon).
-```minimap2 -x ava-ont -t $n $asm $nanopore > ${racon_outdir}/map.paf
-```racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.racon.fasta
+### This step will improve your assembly a little, but not too much. Using short reads is highly recommended (see as follows).
+install racon using [conda](https://anaconda.org/bioconda/racon).
+```
+minimap2 -x ava-ont -t $n $asm $nanopore > ${racon_outdir}/map.paf
+```
+```
+racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.racon.fasta
+```
 
 ## (Optional) Final assembly polish using short reads data
 ### Highly recommended step: use fmlrc for polishing step. [It outperforms other polishers](https://www.biorxiv.org/content/10.1101/2022.07.22.501182v1?ct=).
