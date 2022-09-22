@@ -63,19 +63,19 @@ Use the fmlrc instead of fmlrc2.
 check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
 
-10. put combine_gfa.py and cpGAUL_1.0.4.sh in the same directory.
+10. put combine_gfa.py and ptGAUL.sh in the same directory.
 
 ## Environment
 Examples can be run on Mac and Linux.
 
-![](cpGAUL_image.png)
+![](ptGAUL_image.png)
 
 ## Quick run
-The basic things that you need to run cpGAUL are 1) a cpgenome from a closely related cpgenome data and 2) longread data (works for all fasta, fastq, and fq.gz files).
+The basic things that you need to run ptGAUL are 1) a cpgenome from a closely related cpgenome data and 2) longread data (works for all fasta, fastq, and fq.gz files).
 
   
   ```
-  Example: bash cpGAUL1_0_3.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
+  Example: bash ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
   ```
   
 ## Output
@@ -84,19 +84,19 @@ The basic things that you need to run cpGAUL are 1) a cpgenome from a closely re
 #### EXAMPLE
 ##### The command for the example data.
   ```bash
-  bash cpGAUL_1.0.4.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f 3000 
+  bash ptGAUL.sh -r Beta.fasta -l SRR1980665.1 -t 8 -f 3000 
   ```
 ##### This script is used to find putative paralogs in 353 enrichment data. It requires two input parameters. The "-r", "-l" are required arguments.
   
-  To check all parameters in cpGAUL using:
+  To check all parameters in ptGAUL using:
   ```bash
-  bash cpGAUL_1.0.4.sh -h
+  bash ptGAUL.sh -h
   ```
   
 ##### Parameters in Detail
 ```bash
-Usage: this script is used for ONT cp genome assembly.
-cpGAUL.sh [options]
+Usage: this script is used for plastome assembly using long read data.
+ptGAUL.sh [options]
 Options:
 -r <MANDATORY: contigs or scaffolds in fasta format>
 -l <MANDATORY: long reads in fasta/fastq/fq.gz format>
@@ -118,13 +118,13 @@ install racon using conda.
 ```racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.racon.fasta
 
 ## (Optional) Final assembly polish using short reads data
-Highly recoomend to use fmlrc for polishing step.
+Highly recommend to use fmlrc for polishing step.
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
 
 ```
 gunzip -c $illumina_1r1 $illumina_1r2 $illumina_2r1 $illumina_2r2 | awk 'NR % 4 == 2' | sort | tr NT TN | ropebwt2 -LR | tr NT TN | msbwt convert /PATH/msbwt
 ```
-Once you finished msbwt run. $N means thread number. $assembled_cp is assembled chloroplast genome from cpGAUL. Change the output path of "/PATH/fmlrc/corrected.fasta"
+Once you finished msbwt run. $N means thread number. $assembled_cp is assembled plastome from ptGAUL. Change the output path of "/PATH/fmlrc/corrected.fasta"
 
 ```
 fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fasta
@@ -132,6 +132,6 @@ fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fa
 
 ## Citation
 
-(coming soon) Zhou et al., Chloroplast Genome Assemble Using Long-read data (cpGAUL).
+(coming soon) Zhou et al., Plastid Genome Assembly Using Long-read data (ptGAUL).
 
 If you are using fmlrc, please cite Wang, Jeremy R. and Holt, James and McMillan, Leonard and Jones, Corbin D. FMLRC: Hybrid long read error correction using an FM-index. BMC Bioinformatics, 2018. 19 (1) 50.
