@@ -301,7 +301,7 @@ if [[ $number_edge -eq 3 ]]; then
 	echo '-------------- Congratulations ----------------'
 	echo '==============================================='
 	echo "The gfa file has 3 edges. It is ready for the combine_gfa.py script. See the output of Path1.fasta and Path2.fasta."
-	python3 ./combine_gfa.py -e ./result_$FRL/edges.fa -d ./result_$FRL/sorted_depth 2>>error.txt
+	combine_gfa.py -e ./result_$FRL/edges.fa -d ./result_$FRL/sorted_depth 2>>error.txt
 	end=$(date +%s)
 	echo "It takes $(($end - $start)) sec in total."
 
