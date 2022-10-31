@@ -16,6 +16,10 @@
 This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It will help assemble the complex plastomes with many long repeat regions and reduce the assembly path number from short reads data. Our data is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC.
 
 ## Installation
+Create a conda environment
+```
+conda create --name ptgaul python=3.5
+```
 
 [Use conda to install](https://anaconda.org/bean_061/ptgaul).
 ```
