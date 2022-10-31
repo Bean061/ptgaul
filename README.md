@@ -18,7 +18,8 @@ This pipeline is used for plastid (chloroplast) genome assembly based on long re
 ## Installation
 Create a conda environment
 ```
-conda create --name ptgaul python=3.5
+conda create --name chloroplast python=3.5
+source activate chloroplast
 ```
 
 [Use conda to install](https://anaconda.org/bean_061/ptgaul).
