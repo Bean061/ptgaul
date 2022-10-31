@@ -15,55 +15,27 @@
 ```
 This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It will help assemble the complex plastomes with many long repeat regions and reduce the assembly path number from short reads data. Our data is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC.
 
-## Prerequisites and Software/dependencies
+## Installation
 
-1. [minimap2](https://github.com/lh3/minimap2) or use [conda](https://anaconda.org/bioconda/minimap2) to install.
+[Use conda to install](https://anaconda.org/bean_061/ptgaul).
 ```
-check if minimap2 is installed successfully by typing "minimap2 -h" in terminal.
-```
-
-2. [seqkit](https://bioinf.shenwei.me/seqkit/) or use [conda](https://anaconda.org/bioconda/seqkit) to install.for Step2.
-
-```
-check if seqkit is installed successfully by typing "seqkit -h" in terminal.
-```
-3. [assembly-stats](https://github.com/sanger-pathogens/assembly-stats) or use [conda](https://anaconda.org/bioconda/assembly-stats) to install.for Step2.
-
-```
-check if assembly-stats is installed successfully by typing "assembly-stats" in terminal.
-```
-4. [seqtk](https://github.com/lh3/seqtk) or use [conda](https://anaconda.org/bioconda/seqtk) to install. for Step2.
- 
-```
-check if seqtk is installed successfully by typing "seqtk" in terminal.
-```
-5. [flye](https://github.com/fenderglass/Flye) or use [conda](https://anaconda.org/bioconda/flye) to install. for Step2.
-
-```
-check if flye is installed successfully by typing "flye -h" in terminal.
-```
-6. [python3](https://www.python.org/downloads/) and its dependencies for Step3.
-
-```
-check if python3 is installed successfully by typing "python3 -h" in terminal.
+conda install -c bean_061 ptgaul
 ```
 
 #### Optional Software for polishing step
-7. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
+1. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
 ```
 check if ropebwt2 is installed successfully by typing "ropebwt2 -h" in terminal.
 ```
-8. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt) to install.
+2. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt) to install.
 ```
 check if msbwt is installed successfully by typing "msbwt -h" in terminal.
 ```
-9. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc) to install.
+3. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc) to install.
 Use the fmlrc instead of fmlrc2.
 ```
 check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
-
-10. put combine_gfa.py and ptGAUL.sh in the same directory.
 
 ## Environment
 Examples can be run on Mac and Linux.
@@ -107,8 +79,10 @@ Options:
 If the edge number does not equal 1 or 3 with abnormal plastid length, You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). When you confirm the edges are three, you can manually run the python script again to get the assembly results including two paths.
 
 ```
-python3 ./combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
+combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
 ```
+
+
 
 ## (Optional) Final assembly polish using long reads data
 ### This step will improve your assembly a little, but not too much. Using short reads is highly recommended (see as follows).
