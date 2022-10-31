@@ -18,7 +18,7 @@ This pipeline is used for plastid (chloroplast) genome assembly based on long re
 ## Installation
 Create a conda environment
 ```
-conda create --name chloroplast python=3.5
+conda create --name chloroplast python=3.9
 source activate chloroplast
 ```
 
