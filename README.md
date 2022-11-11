@@ -53,7 +53,7 @@ The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related sp
 ### keep in mind, run the command in the ptGAUL_version directory. Otherwise, combine_gfa.py will not be able to run automatically.
   
   ```
-  bash ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
+  ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
   ```
 
 #### EXAMPLE
