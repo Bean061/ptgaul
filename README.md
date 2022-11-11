@@ -43,7 +43,7 @@ check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
 
 ## Environment
-Examples can be run on Mac and Linux.
+Examples can be run on Linux.
 
 ![](ptGAUL_image.png)
 
