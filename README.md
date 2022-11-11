@@ -18,7 +18,7 @@ This pipeline is used for plastid (chloroplast) genome assembly based on long re
 ## Installation
 Create a conda environment
 ```
-conda create --name chloroplast python=3.9
+conda create --name chloroplast python=3.7
 source activate chloroplast
 ```
 
@@ -43,7 +43,7 @@ check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
 
 ## Environment
-Examples can be run on Linux.
+Examples can be run on Linux and Mac.
 
 ![](ptGAUL_image.png)
 
@@ -59,12 +59,12 @@ The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related sp
 #### EXAMPLE
 ##### The command for the example data.
   ```bash
-  bash ptGAUL.sh -r /path/Beta.fasta -l /path/SRR1980665.1 -t 8 -f 3000 
+  ptGAUL.sh -r /path/Beta.fasta -l /path/SRR1980665.1 -t 8 -f 3000 
   ```
 
   To check all parameters in ptGAUL using:
   ```bash
-  bash ptGAUL.sh -h
+  ptGAUL.sh -h
   ```
   
 ##### Parameters in details
