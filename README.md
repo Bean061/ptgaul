@@ -15,17 +15,7 @@
 ```
 This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It will help assemble the complex plastomes with many long repeat regions and reduce the assembly path number from short reads data. Our data is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC.
 
-## Installation (Bioconda will be activated soon.)
-right now please install following pkgs manually by conda.
-    - minimap2
-    - seqkit
-    - seqtk
-    - assembly-stats
-    - flye
-    - python >=3
-    - biopython
-
-
+## Installation
 Create a conda environment
 ```
 conda create --name chloroplast python=3.7
@@ -34,7 +24,7 @@ source activate chloroplast
 
 [Use conda to install](https://anaconda.org/bean_061/ptgaul).
 ```
-conda install -c bean_061 ptgaul
+conda install -c bioconda ptgaul
 ```
 
 #### Optional Software for polishing step
