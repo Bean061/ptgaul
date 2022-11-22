@@ -22,7 +22,7 @@ conda create --name chloroplast python=3.7
 source activate chloroplast
 ```
 
-[Use conda to install](https://anaconda.org/bean_061/ptgaul).
+[Use conda to install](https://anaconda.org/bioconda/ptgaul).
 ```
 conda install -c bioconda ptgaul
 ptGAUL.sh -h
