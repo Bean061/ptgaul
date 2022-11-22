@@ -25,7 +25,9 @@ source activate chloroplast
 [Use conda to install](https://anaconda.org/bean_061/ptgaul).
 ```
 conda install -c bioconda ptgaul
+ptGAUL.sh -h
 ```
+
 
 #### Optional Software for polishing step
 1. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
