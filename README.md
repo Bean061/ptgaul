@@ -28,22 +28,6 @@ conda install -c bioconda ptgaul
 ptGAUL.sh -h
 ```
 
-
-#### Optional Software for polishing step
-1. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
-```
-check if ropebwt2 is installed successfully by typing "ropebwt2 -h" in terminal.
-```
-2. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt) to install.
-```
-check if msbwt is installed successfully by typing "msbwt -h" in terminal.
-```
-3. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc) to install.
-Use the fmlrc instead of fmlrc2.
-```
-check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
-```
-
 ## Environment
 Examples can be run on Linux and Mac.
 
@@ -102,6 +86,21 @@ racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.raco
 ```
 
 ## (Optional) Final assembly polish using short reads data
+#### Software for polishing step
+1. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
+```
+check if ropebwt2 is installed successfully by typing "ropebwt2 -h" in terminal.
+```
+2. [msbwt](https://github.com/holtjma/msbwt) or use [conda](https://anaconda.org/kbchoi/msbwt) to install.
+```
+check if msbwt is installed successfully by typing "msbwt -h" in terminal.
+```
+3. [fmlrc](https://github.com/holtjma/fmlrc) or use [conda](https://anaconda.org/bioconda/fmlrc) to install.
+Use the fmlrc instead of fmlrc2.
+```
+check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
+```
+
 ### Highly recommended step: use fmlrc for polishing step. [It outperforms other polishers](https://www.biorxiv.org/content/10.1101/2022.07.22.501182v1?ct=).
 
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
