@@ -45,7 +45,7 @@ The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related sp
 #### EXAMPLE
 ##### The command for the example data.
   ```bash
-  ptGAUL.sh -r /path/Beta.fasta -l /path/SRR1980665.1 -t 8 -f 3000 
+  ptGAUL.sh -r /path/Beta.fasta -l /path/SRR1980665.1 -t 8 -f 3000 -o ./ptgaul/
   ```
 
   To check all parameters in ptGAUL using:
@@ -55,22 +55,31 @@ The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related sp
   
 ##### Parameters in details
 ```bash
-Usage: this script is used for plastome assembly using long read data.
-ptGAUL.sh [options]
-Options:
--r <MANDATORY: contigs or scaffolds in fasta format>
--l <MANDATORY: long reads in fasta/fastq/fq.gz format>
--t <number of threads, default:1>
--f <filter the long reads less than this number; default: 3000>
--h <help manu>
-(base)
+Usage: ptGAUL.sh -r (REFERENCE FILE) -l (LONG READ FILE)
+
+                 [-t threads int] [-g genome size int]
+                 [-c coverage int] [-f filter threshold int]
+                 [-o output directory string]
+
+this pipeline is used for plastome assembly using long read data.
+
+optional arguments:
+-h, --help            <show this help message and exit>
+-r, --reference       <MANDATORY: reference contigs or scaffolds in fasta format>
+-l, --longreads       <MANDATORY: raw long reads in fasta/fastq/fq.gz format>
+-t, --threads         <number of threads, default:1>
+-g, --genomesize      <expected genome size of plastome (bp), default:160000>
+-c, --coverage        <a rough coverage of data used for plastome assembly, default:50>
+-f, --filtered        <the raw long reads will be filtered if the lengths are less than this number (bp); default: 3000>
+-o, --outputdir       <output directory of results, defult is current directory>
+
 ```
 
 ## Check your results before using it
 If the edge number does not equal 1 or 3 with abnormal plastid length, You should manually check the assembled data using [BANDAGE](https://rrwick.github.io/Bandage/). When you confirm the edges are three, you can manually run the python script again to get the assembly results including two paths.
 
 ```
-combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth
+combine_gfa.py -e ./PATH_OF_EDGES_FILE/edges.fa -d ./PATH_OF_SORTED_DEPTH_FILE/sorted_depth -o ./
 ```
 
 
@@ -86,7 +95,7 @@ racon -t $n $nanopore_fq ${racon_outdir}/map.paf $asm > ${racon_outdir}/asm.raco
 ```
 
 ## (Optional) Final assembly polish using short reads data
-#### Software for polishing step
+#### Software for polishing step (this needs a separate python2 environment)
 1. [ropebwt2](https://github.com/lh3/ropebwt2) or use [conda](https://anaconda.org/bioconda/ropebwt2) to install.
 ```
 check if ropebwt2 is installed successfully by typing "ropebwt2 -h" in terminal.
