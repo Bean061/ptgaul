@@ -29,7 +29,7 @@ ptGAUL.sh -h
 ```
 
 ## Environment
-Examples can be run on Linux and Mac.
+Examples can be applied on Linux and Mac.
 
 ![](ptGAUL_image.png)
 
@@ -110,7 +110,7 @@ Use the fmlrc instead of fmlrc2.
 check if fmlrc is installed successfully by typing "fmlrc -h" in terminal.
 ```
 
-### Highly recommended step: use fmlrc for polishing step. [It outperforms other polishers](https://www.biorxiv.org/content/10.1101/2022.07.22.501182v1?ct=).
+### Highly recommended steps: use fmlrc for polishing step. [It outperforms other polishers](https://www.biorxiv.org/content/10.1101/2022.07.22.501182v1?ct=).
 
 files illumina_* are the fq.gz file of illumina reads. Change the output path directory "/PATH/msbwt".
 
