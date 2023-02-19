@@ -13,7 +13,7 @@
 
 ===========================================================================
 ```
-This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It will help assemble the complex plastomes with many long repeat regions and reduce the assembly path number from short reads data. Our data is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC.
+This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It can easily help assemble the complex plastomes with many long repeat regions which cannot be addressed by short read data only. Short reads assembly can sometimes generate many paths due to the long repeat regions (e.g. Juncus). This pipeline is very straitforward with two mendatory arguments (reference and raw long-read data). It usually takes about 10 minutes to assemble a plastome with 16Gb memory and less than 10Gbp sequence data. Our paper is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC-Chaple Hill.
 
 ## Installation
 Create a conda environment
