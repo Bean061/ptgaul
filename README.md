@@ -15,6 +15,15 @@
 ```
 This pipeline is used for plastid (chloroplast) genome assembly based on long read data, including both Nanopore and PacBio. It can easily help assemble the complex plastomes with many long repeat regions which cannot be addressed by short read data only. Short reads assembly can sometimes generate many paths due to the long repeat regions (e.g. Juncus). This pipeline is very straitforward with two mendatory arguments (reference and raw long-read data). It usually takes about 10 minutes to assemble a plastome with 16Gb memory and less than 10Gbp sequence data. Our paper is in prep. [Zhou et al. (unpublished)]. We introduced this pipeline in [BAGGs workshop](https://tarheels.live/baags/) at UNC-Chaple Hill.
 
+## Latest updates
+### ptGAUL 1.0.5 release (Feb 9, 2023)
+  * New options for ptGAUL: -o output directory; -g genome size; -c coverage. 
+  * New argument for python script: -o output directory.
+  * Fixed the combine_gfa.py, which can be run automatically.
+
+### ptGAUL 1.0.4 release (Oct 31, 2022)
+  * First version.
+  
 ## Installation
 Create a conda environment
 ```
@@ -36,7 +45,7 @@ Examples can be applied on Linux and Mac.
 ## Quick run
 The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related species (it should work for the references either from the same genus or the same family) and 2) -l: your long read data (any seuquence file in fasta, fastq, and fq.gz format).
 
-### keep in mind, run the command in the ptGAUL_version directory. Otherwise, combine_gfa.py will not be able to run automatically.
+### If you run 1.0.4 version, the command in the ptGAUL_version directory. Otherwise, combine_gfa.py will not be able to run automatically.
   
   ```
   ptGAUL.sh -r [PATH]/[reference_genome]/ -l [PATH]/[long_read_data]
