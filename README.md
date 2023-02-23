@@ -34,7 +34,7 @@ Examples can be applied on Linux and Mac.
 ![](ptGAUL_image.png)
 
 ## Quick run
-The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related species and 2) -l: your long read data (any seuquence file in fasta, fastq, and fq.gz format).
+The basic arguments in ptGAUL.sh are 1) -r: a plastome from a closely related species (it should work for the references either from the same genus or the same family) and 2) -l: your long read data (any seuquence file in fasta, fastq, and fq.gz format).
 
 ### keep in mind, run the command in the ptGAUL_version directory. Otherwise, combine_gfa.py will not be able to run automatically.
   
