@@ -36,6 +36,14 @@ esearch -db nucleotide -query "NC_035584.1" | efetch -format fasta > NC_035584.1
 
 # example of using GetOrganelle for J. effusus
 fasterq-dump --split-files SRR13309655
+
 # load GetOrganelle
 get_organelle_from_reads.py -1 SRR13309655.1_1.fastq -2 SRR13309655.1_2.fastq -o SSR55 -R 15 -k 21,39,45,65,85,105,115,125 -F embplant_pt -t 20
 get_organelle_from_reads.py -1 SRR13309655.1_1.fastq -2 SRR13309655.1_2.fastq -o SSR55_w075 -R 15 -k 21,39,45,65,85,105,115,125 -F embplant_pt -t 20 -w 0.75 
+
+# To run the GetOrganelle command, when the input data is too large, choose a fraction of the large dataset using seqtk module.
+# example: J. validus SRR21976091_1.fastq and SRR21976091_2.fastq have about 87G, respectively.
+module add seqtk
+seqtk sample -s100 SRR21976091_1.fastq 0.05 > J_validus_s1.fastq
+seqtk sample -s100 SRR21976091_2.fastq 0.05 > J_validus_s2.fastq
+
