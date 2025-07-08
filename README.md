@@ -134,6 +134,6 @@ fmlrc -p $N /PATH/msbwt/comp_msbwt.npy $assembled_cp /PATH/fmlrc/corrected_cp.fa
 
 ## Citation
 
-(in prep.) Zhou et al., Plastid Genome Assembly Using Long-read data (ptGAUL). DOI: 10.1101/2022.11.19.517194
+Zhou, W., Armijos, C.E., Lee, C., Lu, R., Wang, J., Ruhlman, T.A., Jansen, R.K., Jones, A.M. and Jones, C.D., 2023. Plastid genome assembly using long‐read data. Molecular Ecology Resources, 23(6), pp.1442-1457.
 
 If you are using fmlrc, please cite Wang, Jeremy R. and Holt, James and McMillan, Leonard and Jones, Corbin D. FMLRC: Hybrid long read error correction using an FM-index. BMC Bioinformatics, 2018. 19 (1) 50.
